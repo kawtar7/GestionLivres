@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Ajouter";
+}
+
+
+@{
+    ViewData["Title"] = "Ajouter";
+}
+
+@model Livre
+
+@{
+    ViewBag.Title = "Ajouter un Livre";
+}
+
+<h2>Ajouter un Livre</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.ISBN)
+        @Html.TextBoxFor(model => model.ISBN, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Titre)
+        @Html.TextBoxFor(model => model.Titre, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Auteur)
+        @Html.TextBoxFor(model => model.Auteur, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DateEdition)
+        @Html.TextBoxFor(model => model.DateEdition, new { @class = "form-control", type = "date" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Resume)
+        @Html.TextAreaFor(model => model.Resume, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+}
+
+
+
+
+

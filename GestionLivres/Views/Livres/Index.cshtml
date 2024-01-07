@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<ul>
+    @foreach(var item in ViewBag.Livres)
+    {
+        <li>ISBN:@item.ISBN - Titre:@item.Titre - Auteur:@item.Auteur - Date:@item.DateEdition - Resume:@item.Resume</li>
+        <a asp-controller="Livres" asp-action="Modifier" asp-route-isbn="@item.ISBN">Modifier Un Livre</a>
+        <a asp-controller="Livres" asp-action="Supprimer" asp-route-isbn="@item.ISBN">Supprimer Un Livre</a>
+        @* <li>Titre:@item.Titre</li>
+        <li>Auteur:@item.Auteur</li>
+        <li>Date:@item.DateEdition</li>
+        <li>Resume:@item.Resume</li>
+        <li>********************************</li> *@
+    }
+</ul>
+<a asp-controller="Livres" asp-action="Ajouter">Ajouter Un Livre</a>
